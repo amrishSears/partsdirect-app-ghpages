@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="5.7">[12, 1]: trailing whitespace
+[14, 1]: trailing whitespace
+[17, 1]: trailing whitespace
+[18, 1]: trailing whitespace
+[19, 1]: trailing whitespace
+[22, 1]: trailing whitespace
+[51, 1]: trailing whitespace
+[1, 24]: ' should be "
+[2, 101]: ' should be "
+[3, 41]: ' should be "
+[16, 41]: ' should be "
+[20, 29]: ' should be "
+[2, 20]: missing whitespace
+[2, 65]: missing whitespace
+[2, 74]: missing whitespace
+[2, 86]: missing whitespace
+</checkstyle>
