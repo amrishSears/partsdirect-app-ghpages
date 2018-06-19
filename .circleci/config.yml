@@ -18,20 +18,20 @@ jobs:
       - run: npm config set registry https://registry.npmjs.org/
       - run: npm install
       - run: npm run build:dev
-      - run: |
-          git config --global user.email abhimanyu.gupta@infosys.com
-          git config --global user.name "abhimanyu"
-          git clone $CIRCLE_REPOSITORY_URL out
-          cd out
-          git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-          cd ..
-          npm run build:dev
-          cp -a dist/. out/.
-          mkdir -p out/.circleci && cp -a .circleci/. out/.circleci/.
-          cd out
-          git add -A
-          git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
-          git push origin $TARGET_BRANCH
-          
-    
+      - run:
+          name: Deploy as GitHub Pages
+          command: |
+              git config --global user.email abhimanyu.gupta@infosys.com
+              git config --global user.name "abhimanyu"
+              git clone $CIRCLE_REPOSITORY_URL out
+              cd out
+              git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+              git rm -rf .
+              cd ..
+              cp -a dist/. out/.
+              mkdir -p out/.circleci && cp -a .circleci/. out/.circleci/.
+              cd out
+              git add -A
+              git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
+              git push origin $TARGET_BRANCH
     
