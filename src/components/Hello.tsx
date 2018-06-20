@@ -20,7 +20,7 @@ export class Hello extends React.Component<HelloProps, any> {
           <Header/>
           <div className="container">
          <div className="jumbotron">
-            <h1>Sears Demo Page </h1>            
+            <h1>Sears Parts Direct Demo Page </h1>            
          </div>
          <SearchTab/>
            <SpdBanner/> 
